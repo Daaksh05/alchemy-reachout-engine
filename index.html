@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Alchemy AI - 5 AI Agents working 24/7 to grow your business. Turn prospects into customers with automated lead finding, outreach, and content repurposing.">
+    <meta name="keywords" content="AI, sales automation, lead generation, AI agents, marketing automation">
+    <title>Alchemy AI - Turn Prospects Into Customers</title>
+
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="logo.png" alt="Alchemy AI Logo" class="logo-img" id="nav-logo">
+                <span class="logo-text">Alchemy AI</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#agents" class="nav-link">Agents</a></li>
+                <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#cta" class="nav-link nav-cta">Get Started</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <!-- Background Shapes -->
+        <div class="hero-bg-shapes">
+            <svg class="shape shape-1" viewBox="0 0 200 200">
+                <polygon points="100,0 200,100 100,200 0,100" fill="#3498DB" />
+            </svg>
+            <svg class="shape shape-2" viewBox="0 0 200 200">
+                <polygon points="100,0 200,100 100,200 0,100" fill="#0C3483" />
+            </svg>
+            <svg class="shape shape-3" viewBox="0 0 200 200">
+                <polygon points="100,0 200,100 100,200 0,100" fill="#5DADE2" />
+            </svg>
+        </div>
+
+        <div class="container hero-container">
+            <!-- Text Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Turn Prospects
+                    <span class="hero-title-accent">Into CUSTOMERS</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Your AI Sales Team. Working 24/7.<br>
+                    No Hiring. No Management. Just Results.
+                </p>
+
+                <!-- Trust Metrics -->
+                <div class="trust-metrics">
+                    <div class="metric">
+                        <div class="metric-value">500+</div>
+                        <div class="metric-label">Companies</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">2.5M</div>
+                        <div class="metric-label">Leads</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">10x</div>
+                        <div class="metric-label">ROI</div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-ctas">
+                    <a href="#pricing" class="btn btn-primary btn-lg">
+                        Get Started Free
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg">
+                        <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        Watch Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual Content -->
+            <div class="hero-visual">
+                <div class="logo-showcase">
+                    <!-- Floating Shapes -->
+                    <div class="floating-shapes">
+                        <div class="float-shape fs-1"></div>
+                        <div class="float-shape fs-2"></div>
+                        <div class="float-shape fs-3"></div>
+                        <div class="float-shape fs-4"></div>
+                        <div class="float-shape fs-5"></div>
+                        <div class="float-shape fs-6"></div>
+                    </div>
+
+                    <img src="logo.png" alt="Alchemy AI - Transforming Business with AI" class="hero-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATS BAR ========== -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" data-count="500">0+</div>
+                    <div class="stat-label">Companies Trusting Alchemy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="2.5" data-suffix="M+">0</div>
+                    <div class="stat-label">Leads Generated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="10" data-suffix="x">0</div>
+                    <div class="stat-label">Average ROI</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" data-count="98" data-suffix="%">0</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AGENTS SECTION ========== -->
+    <section class="services" id="agents">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">
+                    AI Agents <span class="accent-text">Built For Growth</span>
+                </h2>
+                <p class="section-subtitle">
+                    5 specialized AI agents working in harmony to transform your business growth.
+                </p>
+            </div>
+
+            <div class="agents-grid stagger-fade">
+                <!-- Agent 1: Lead Finder -->
+                <div class="agent-card fade-in">
+                    <div class="agent-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                            <path d="M11 8v6M8 11h6" />
+                        </svg>
+                    </div>
+                    <h3 class="agent-name">Lead Finder Agent</h3>
+                    <p class="agent-tagline">Find Your Best Customers</p>
+                    <p class="agent-description">
+                        Discover qualified prospects across 150+ sources automatically.
+                    </p>
+                    <ul class="agent-features">
+                        <li>Automated search across platforms</li>
+                        <li>Smart filtering by size & industry</li>
+                        <li>Real-time data updates</li>
+                    </ul>
+                    <a href="#" class="agent-link">Learn More</a>
+                </div>
+
+                <!-- Agent 2: Lead Outreach -->
+                <div class="agent-card fade-in">
+                    <div class="agent-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13" />
+                            <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="agent-name">Lead Outreach Agent</h3>
+                    <p class="agent-tagline">Personalized At Scale</p>
+                    <p class="agent-description">
+                        Send hundreds of unique messages simultaneously.
+                    </p>
+                    <ul class="agent-features">
+                        <li>AI-powered personalization engine</li>
+                        <li>Multi-channel (email, LinkedIn, WhatsApp)</li>
+                        <li>Automatic follow-up sequences</li>
+                    </ul>
+                    <a href="#" class="agent-link">Learn More</a>
+                </div>
+
+                <!-- Agent 3: Content Repurposing -->
+                <div class="agent-card fade-in">
+                    <div class="agent-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                            <path d="M14 2v6h6" />
+                            <path d="M12 18v-6" />
+                            <path d="M9 15h6" />
+                        </svg>
+                    </div>
+                    <h3 class="agent-name">Content Repurposing Agent</h3>
+                    <p class="agent-tagline">Create 10x More Content</p>
+                    <p class="agent-description">
+                        Transform one piece into 10+ formats instantly.
+                    </p>
+                    <ul class="agent-features">
+                        <li>Auto-transform to blogs, social, videos</li>
+                        <li>10+ content formats in seconds</li>
+                        <li>Schedule posts across all channels</li>
+                    </ul>
+                    <a href="#" class="agent-link">Learn More</a>
+                </div>
+
+                <!-- Agent 4: CMS Dashboard -->
+                <div class="agent-card fade-in">
+                    <div class="agent-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
+                        </svg>
+                    </div>
+                    <h3 class="agent-name">CMS Dashboard Agent</h3>
+                    <p class="agent-tagline">Control Everything</p>
+                    <p class="agent-description">
+                        Unified dashboard to manage all agents & campaigns.
+                    </p>
+                    <ul class="agent-features">
+                        <li>Single view for all agent activities</li>
+                        <li>Real-time analytics & metrics</li>
+                        <li>Team collaboration tools</li>
+                    </ul>
+                    <a href="#" class="agent-link">Learn More</a>
+                </div>
+
+                <!-- Agent 5: SEO Copilot -->
+                <div class="agent-card fade-in">
+                    <div class="agent-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 20V10" />
+                            <path d="M18 20V4" />
+                            <path d="M6 20v-4" />
+                            <circle cx="12" cy="6" r="2" />
+                        </svg>
+                    </div>
+                    <h3 class="agent-name">SEO Copilot Agent</h3>
+                    <p class="agent-tagline">Rank Higher, Faster</p>
+                    <p class="agent-description">
+                        Audit & optimize your website for search rankings.
+                    </p>
+                    <ul class="agent-features">
+                        <li>Automated SEO audits & detection</li>
+                        <li>Smart improvement recommendations</li>
+                        <li>Rank position tracking</li>
+                    </ul>
+                    <a href="#" class="agent-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS - VERTICAL TIMELINE ========== -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">
+                    Get started in minutes, not months. Just 4 simple steps.
+                </p>
+            </div>
+
+            <div class="timeline-container">
+                <!-- Step 1 -->
+                <div class="timeline-step fade-in">
+                    <div class="step-node">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">CONNECT</h3>
+                        <p class="step-time">1 Minute Setup</p>
+                        <p class="step-description">
+                            Link your accounts — email, CRM, and social platforms. Full integration in 60 seconds.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-step fade-in">
+                    <div class="step-node">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">CONFIGURE</h3>
+                        <p class="step-time">Your Goals</p>
+                        <p class="step-description">
+                            Set your preferences. Tell Alchemy your target audience & objectives for personalized
+                            results.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-step fade-in">
+                    <div class="step-node">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">LAUNCH</h3>
+                        <p class="step-time">Instant Activation</p>
+                        <p class="step-description">
+                            5 AI agents start working immediately. No waiting, instant activation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-step fade-in">
+                    <div class="step-node">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">SCALE</h3>
+                        <p class="step-time">Watch Growth</p>
+                        <p class="step-description">
+                            Results appear immediately. Monitor dashboards, adjust, and scale your success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FEATURES SECTION ========== -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Why Choose Alchemy AI</h2>
+                <p class="section-subtitle">
+                    Built for modern businesses that want real results.
+                </p>
+            </div>
+
+            <div class="features-grid stagger-fade">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">AI-Powered Agents</h3>
+                    <p class="feature-description">
+                        5 specialized agents working 24/7 without breaks.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Ultra-Fast Setup</h3>
+                    <p class="feature-description">
+                        Get started in 5 minutes, no coding required.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Real-Time Analytics</h3>
+                    <p class="feature-description">
+                        Track every metric that matters with live dashboards.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Proven Results</h3>
+                    <p class="feature-description">
+                        Average 10x ROI within 30 days or money back.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Bank-Grade Security</h3>
+                    <p class="feature-description">
+                        Enterprise-level encryption & SOC 2 compliance.
+                    </p>
+                </div>
+
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Global Support</h3>
+                    <p class="feature-description">
+                        Works with businesses in 150+ countries.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS - SCROLLING CAROUSEL ========== -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">
+                    Join 500+ companies already growing with Alchemy AI.
+                </p>
+            </div>
+        </div>
+
+        <div class="testimonials-wrapper">
+            <div class="testimonials-track">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Alchemy AI increased our qualified leads by 300% in just 30 days. The ROI has been incredible."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Head of Growth @ TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "We replaced our entire SDR team with Alchemy agents. 10x more outreach at 1/5 the cost."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Roberts</h4>
+                            <p>CEO @ ScaleUp Inc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "The Content Repurposing Agent alone saves us 40 hours per week. Game changer for our
+                        marketing."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EP</div>
+                        <div class="author-info">
+                            <h4>Emily Parker</h4>
+                            <p>CMO @ GrowthLabs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Best investment we made this year. The lead quality is exceptional and the automation is
+                        flawless."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <p>Founder @ StartupXYZ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "From 50 to 500 clients in 6 months. Alchemy AI's agents work harder than any team I've ever
+                        hired."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LC</div>
+                        <div class="author-info">
+                            <h4>Lisa Chen</h4>
+                            <p>Director @ Agency360</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Duplicate for infinite scroll -->
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Alchemy AI increased our qualified leads by 300% in just 30 days. The ROI has been incredible."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Head of Growth @ TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "We replaced our entire SDR team with Alchemy agents. 10x more outreach at 1/5 the cost."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info">
+                            <h4>Michael Roberts</h4>
+                            <p>CEO @ ScaleUp Inc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "The Content Repurposing Agent alone saves us 40 hours per week. Game changer for our
+                        marketing."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EP</div>
+                        <div class="author-info">
+                            <h4>Emily Parker</h4>
+                            <p>CMO @ GrowthLabs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Best investment we made this year. The lead quality is exceptional and the automation is
+                        flawless."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">DK</div>
+                        <div class="author-info">
+                            <h4>David Kim</h4>
+                            <p>Founder @ StartupXYZ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="testimonial-quote">
+                        "From 50 to 500 clients in 6 months. Alchemy AI's agents work harder than any team I've ever
+                        hired."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LC</div>
+                        <div class="author-info">
+                            <h4>Lisa Chen</h4>
+                            <p>Director @ Agency360</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TEAM SECTION ========== -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Meet The Team</h2>
+                <p class="section-subtitle">
+                    The minds behind Alchemy AI's innovation.
+                </p>
+            </div>
+
+            <div class="team-grid stagger-fade">
+                <!-- Founder 1 -->
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <div class="team-placeholder">CEO</div>
+                    </div>
+                    <h3 class="team-name">Sanjaykumaran</h3>
+                    <p class="team-role">CEO & Co-Founder</p>
+                    <p class="team-bio">
+                        Visionary entrepreneur with expertise in AI and business strategy. Building the future of
+                        automated sales.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Founder 2 -->
+                <div class="team-card fade-in">
+                    <div class="team-image">
+                        <div class="team-placeholder">CTO</div>
+                    </div>
+                    <h3 class="team-name">Daakshayani</h3>
+                    <p class="team-role">CTO & Co-Founder</p>
+                    <p class="team-bio">
+                        Technical architect driving AI innovation. Passionate about building intelligent systems that
+                        transform businesses.
+                    </p>
+                    <div class="team-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PRICING SECTION ========== -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Simple, Transparent Pricing</h2>
+                <p class="section-subtitle">
+                    Choose the plan that fits your growth goals.
+                </p>
+            </div>
+
+            <!-- Pricing Toggle -->
+            <div class="pricing-toggle fade-in">
+                <span class="toggle-label">Monthly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">
+                    Annual
+                    <span class="save-badge">Save 20%</span>
+                </span>
+            </div>
+
+            <div class="pricing-grid stagger-fade">
+                <!-- Starter Plan -->
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Starter</h3>
+                        <p class="pricing-description">For Small Businesses</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="299" data-annual="239">299</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Lead Finder Agent
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Basic Analytics
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Email Support
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Up to 1,000 leads/month
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            1 User Account
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+
+                <!-- Professional Plan (Featured) -->
+                <div class="pricing-card featured fade-in">
+                    <span class="popular-badge">⭐ MOST POPULAR</span>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Professional</h3>
+                        <p class="pricing-description">For Growing Companies</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="999" data-annual="799">999</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            All 5 AI Agents
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Advanced Analytics & Reports
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Priority Support
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Unlimited Leads
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            5 User Accounts
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            API Access
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card fade-in">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Enterprise</h3>
+                        <p class="pricing-description">For Large Organizations</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="amount custom">Custom Pricing</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Everything in Professional
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Dedicated Account Manager
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Custom Integrations
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            SLA & Uptime Guarantee
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            Custom Workflows
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            On-Premise Option
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MEGA CTA SECTION ========== -->
+    <section class="cta-section" id="cta">
+        <!-- Background Shapes -->
+        <div class="cta-bg-shapes">
+            <svg class="cta-shape cta-shape-1" viewBox="0 0 200 200">
+                <polygon points="100,0 200,100 100,200 0,100" fill="#FFFFFF" />
+            </svg>
+            <svg class="cta-shape cta-shape-2" viewBox="0 0 200 200">
+                <polygon points="100,0 200,100 100,200 0,100" fill="#FFFFFF" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Growth?</h2>
+                <p class="cta-subtitle">Join 500+ companies using Alchemy AI to scale faster.</p>
+
+                <div class="cta-buttons">
+                    <a href="#pricing" class="btn btn-white btn-lg">Start Free Trial</a>
+                    <a href="#how-it-works" class="btn btn-outline-white btn-lg">Schedule Demo</a>
+                </div>
+
+                <p class="cta-note">No credit card required • 14-day free trial • Full access to all features</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand Column -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Alchemy AI" class="footer-logo-img">
+                        <span>Alchemy AI</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Transform your business growth with 5 AI agents working 24/7 to find leads, outreach, and close
+                        deals.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Links -->
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#agents">AI Agents</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">API Docs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Links -->
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#team">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Alchemy AI. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
