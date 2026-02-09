@@ -214,17 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =========================================================================
-    // TIMELINE - Interactive Steps
-    // =========================================================================
-    const timelineSteps = document.querySelectorAll('.timeline-step');
 
-    timelineSteps.forEach(step => {
-        step.addEventListener('mouseenter', () => {
-            timelineSteps.forEach(s => s.classList.remove('active'));
-            step.classList.add('active');
-        });
-    });
 
     // =========================================================================
     // BUTTON RIPPLE EFFECT
