@@ -870,6 +870,10 @@ ul {
     text-align: center;
     padding: 0 60px;
     position: relative;
+    flex: 1;
+    /* Allow equal distribution */
+    min-width: 250px;
+    /* Ensure enough space for 4-5 digits + suffix */
 }
 
 .stat-item:not(:last-child)::after {
@@ -890,6 +894,9 @@ ul {
     color: var(--color-white);
     line-height: 1;
     margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+    /* Prevents shaking by making all numbers same width */
+    display: block;
 }
 
 .stat-label {
@@ -1212,8 +1219,9 @@ ul {
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 50px;
 }
 
@@ -1223,6 +1231,8 @@ ul {
     border-radius: 20px;
     background: var(--color-light-gray);
     transition: all var(--transition-smooth);
+    flex: 1 1 350px;
+    max-width: 450px;
 }
 
 .team-card:hover {
@@ -1817,6 +1827,7 @@ ul {
 
     .stat-item {
         padding: 0 40px;
+        min-width: 200px;
     }
 
     .stat-item:not(:last-child)::after {
@@ -1832,7 +1843,7 @@ ul {
     }
 
     .team-grid {
-        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
     }
 
     .pricing-grid {
@@ -1944,7 +1955,7 @@ ul {
     }
 
     .team-grid {
-        grid-template-columns: 1fr;
+        justify-content: center;
     }
 
     .footer-grid {
@@ -1988,6 +1999,11 @@ ul {
 
     .stat-value {
         font-size: 40px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+        padding: 0 10px;
     }
 
     .logo-showcase {
