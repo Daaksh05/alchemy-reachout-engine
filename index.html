@@ -476,6 +476,72 @@
     </section>
 
 
+    <!-- ========== COMPARISON SECTION ========== -->
+    <section class="comparison" id="comparison">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Stop Overpaying for <span class="accent-text">Growth</span></h2>
+                <p class="section-subtitle">
+                    See how much you save by switching to Alchemy AI versus hiring a traditional team.
+                </p>
+            </div>
+
+            <div class="comparison-container fade-in">
+                <div class="comparison-grid">
+                    <!-- Left: Control Panel -->
+                    <div class="comparison-controls">
+                        <h3>Team Size Calculator</h3>
+                        <p>How many SDRs would you need to hire to match our output?</p>
+
+                        <div class="slider-group">
+                            <label for="sdrSlider">If you hired <span id="sdrCountDisplay" class="highlight">1</span>
+                                SDR(s)...</label>
+                            <input type="range" id="sdrSlider" min="1" max="5" value="1" step="1">
+                            <div class="slider-labels">
+                                <span>1 SDR</span>
+                                <span>3 SDRs</span>
+                                <span>5 SDRs</span>
+                            </div>
+                        </div>
+
+                        <div class="savings-callout">
+                            <p class="savings-label">Your Monthly Savings</p>
+                            <h2 class="savings-amount">$<span id="savingsAmount">5,651</span></h2>
+                            <p class="savings-annual">That's <span id="annualSavings">$67,812</span> per year!</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Visual Chart -->
+                    <div class="comparison-chart">
+                        <!-- Hiring Column -->
+                        <div class="chart-column">
+                            <div class="bar-wrapper">
+                                <div class="bar hiring-bar" id="hiringBar" style="height: 30%;"></div>
+                                <span class="bar-value">$<span id="hiringCost">6,000</span></span>
+                            </div>
+                            <div class="column-info">
+                                <h4>Traditional Hiring</h4>
+                                <p>Salary, Tools, Training, Management</p>
+                            </div>
+                        </div>
+
+                        <!-- Alchemy Column -->
+                        <div class="chart-column">
+                            <div class="bar-wrapper">
+                                <div class="bar alchemy-bar" id="alchemyBar" style="height: 5%;"></div>
+                                <span class="bar-value">$<span id="alchemyCost">349</span></span>
+                            </div>
+                            <div class="column-info">
+                                <h4>Alchemy AI</h4>
+                                <p>All-in-one Growth Service</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== TEAM SECTION ========== -->
     <section class="team" id="team">
         <div class="container">

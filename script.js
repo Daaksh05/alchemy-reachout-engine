@@ -322,4 +322,51 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+    /* --------------------------------------------------------------------------
+       Comparison Section - Cost Calculator Logic
+       -------------------------------------------------------------------------- */
+    const sdrSlider = document.getElementById('sdrSlider');
+    if (sdrSlider) {
+        const sdrCountDisplay = document.getElementById('sdrCountDisplay');
+        const hiringCostDisplay = document.getElementById('hiringCost');
+        const alchemyCostDisplay = document.getElementById('alchemyCost');
+        const savingsAmountDisplay = document.getElementById('savingsAmount');
+        const annualSavingsDisplay = document.getElementById('annualSavings');
+        const hiringBar = document.getElementById('hiringBar');
+        const alchemyBar = document.getElementById('alchemyBar');
+
+        const SDR_MONTHLY_COST = 6000; // Salary + Tools + Overhead
+        const ALCHEMY_MONTHLY_COST = 349;
+        const MAX_SDR_COUNT = 5;
+        const MAX_TOTAL_COST = SDR_MONTHLY_COST * MAX_SDR_COUNT; // $30,000 reference
+
+        function updateComparison() {
+            const count = parseInt(sdrSlider.value);
+            const hiringTotal = count * SDR_MONTHLY_COST;
+            const alchemyTotal = ALCHEMY_MONTHLY_COST;
+            const savings = hiringTotal - alchemyTotal;
+            const annual = savings * 12;
+
+            // Update Text
+            if (sdrCountDisplay) sdrCountDisplay.textContent = count;
+            if (hiringCostDisplay) hiringCostDisplay.textContent = hiringTotal.toLocaleString();
+            if (alchemyCostDisplay) alchemyCostDisplay.textContent = alchemyTotal.toLocaleString();
+            if (savingsAmountDisplay) savingsAmountDisplay.textContent = savings.toLocaleString();
+            if (annualSavingsDisplay) annualSavingsDisplay.textContent = '$' + annual.toLocaleString();
+
+            // Update Bars
+            // Calculate percentage of max possible cost
+            const hHeight = (hiringTotal / MAX_TOTAL_COST) * 100;
+            const aHeight = (alchemyTotal / MAX_TOTAL_COST) * 100;
+
+            // Set styles (min 2% height for visibility)
+            if (hiringBar) hiringBar.style.height = `${Math.max(hHeight, 2)}%`;
+            if (alchemyBar) alchemyBar.style.height = `${Math.max(aHeight, 2)}%`;
+        }
+
+        sdrSlider.addEventListener('input', updateComparison);
+        // Initialize
+        updateComparison();
+    }
 });

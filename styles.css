@@ -2174,3 +2174,249 @@ ul {
         margin-top: 40px;
     }
 }
+
+/* --------------------------------------------------------------------------
+   Comparison Section - Hiring vs Alchemy
+   -------------------------------------------------------------------------- */
+.comparison {
+    padding: 100px 0;
+    background: var(--color-white);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Decoration */
+.comparison::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(52, 152, 219, 0.05) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Controls Panel (Left) */
+.comparison-controls {
+    padding: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+}
+
+.comparison-controls h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: 8px;
+}
+
+.comparison-controls p {
+    color: var(--color-medium-gray);
+    margin-bottom: 32px;
+}
+
+/* Slider Styling */
+.slider-group {
+    margin-bottom: 40px;
+}
+
+.slider-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-dark-blue);
+    margin-bottom: 16px;
+}
+
+.slider-group label .highlight {
+    color: var(--color-bright-blue);
+    font-size: 24px;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: var(--color-light-gray);
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-bright-blue);
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
+    transition: transform 0.2s;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: var(--color-light-text);
+    font-weight: 500;
+}
+
+/* Savings Callout */
+.savings-callout {
+    background: linear-gradient(135deg, var(--color-dark-blue) 0%, #1a2530 100%);
+    padding: 24px;
+    border-radius: 16px;
+    color: var(--color-white);
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.savings-callout::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+}
+
+.savings-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 14px;
+    margin-bottom: 8px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.savings-amount {
+    font-size: 48px;
+    font-weight: 800;
+    color: #2ecc71;
+    /* Green for money/savings */
+    margin: 0 0 8px 0;
+    line-height: 1;
+}
+
+.savings-annual {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin: 0 !important;
+}
+
+/* Visual Chart (Right) */
+.comparison-chart {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-end;
+    height: 400px;
+    padding-bottom: 40px;
+    padding-top: 60px;
+    /* Space for labels popping up */
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 140px;
+}
+
+.bar-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.bar {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    transition: height 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Bouncy spring effect */
+    position: relative;
+    min-height: 2%;
+    /* Ensure visibility */
+}
+
+.hiring-bar {
+    background: linear-gradient(to top, #e74c3c, #ff7675);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.alchemy-bar {
+    background: linear-gradient(to top, var(--color-bright-blue), var(--color-light-blue));
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.bar-value {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--color-dark-blue);
+    background: var(--color-white);
+    padding: 6px 12px;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 0.5s 0.3s forwards;
+}
+
+.column-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.column-info h4 {
+    font-weight: 700;
+    color: var(--color-dark-blue);
+    margin-bottom: 4px;
+}
+
+.column-info p {
+    font-size: 12px;
+    color: var(--color-light-text);
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .comparison-chart {
+        height: 300px;
+    }
+}
