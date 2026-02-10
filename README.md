@@ -10,6 +10,30 @@
 
 ---
 
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.8+
+
+### Run Locally
+
+1. **Install Dependencies**
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+
+2. **Start the App**
+   ```bash
+   ./run.sh
+   # OR
+   python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+   ```
+
+3. **Open Browser**
+   - Visit [http://localhost:8000](http://localhost:8000)
+
+---
+
 ## 🚀 Our Mission
 
 Alchemy AI is not just a tool—it's a high-performance growth service. We leverage a proprietary stack of 5 specialized AI agents to automate lead generation, outreach, and content strategy. 
