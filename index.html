@@ -379,6 +379,102 @@
         </div>
     </section>
 
+    <!-- ========== CONFIGURATOR SECTION ========== -->
+    <section class="configurator" id="configurator">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Build Your <span class="accent-text">Custom Growth Plan</span></h2>
+                <p class="section-subtitle">
+                    Select the services you need and see your estimated monthly investment.
+                </p>
+            </div>
+
+            <div class="config-container fade-in">
+                <!-- Service Selection Grid -->
+                <div class="config-grid">
+                    <!-- Lead Generation -->
+                    <div class="config-card" data-agent="lead-generation" data-price="100">
+                        <div class="config-check"></div>
+                        <div class="config-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                            </svg>
+                        </div>
+                        <h4 class="config-name">Lead Generation</h4>
+                        <p class="config-price">+$100/mo</p>
+                    </div>
+
+                    <!-- Outreach Campaigns -->
+                    <div class="config-card" data-agent="outreach-campaigns" data-price="150">
+                        <div class="config-check"></div>
+                        <div class="config-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13" />
+                                <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+                            </svg>
+                        </div>
+                        <h4 class="config-name">Outreach Campaigns</h4>
+                        <p class="config-price">+$150/mo</p>
+                    </div>
+
+                    <!-- Content Repurposing -->
+                    <div class="config-card" data-agent="content-repurposing" data-price="100">
+                        <div class="config-check"></div>
+                        <div class="config-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
+                            </svg>
+                        </div>
+                        <h4 class="config-name">Content Repurposing</h4>
+                        <p class="config-price">+$100/mo</p>
+                    </div>
+
+                    <!-- SEO Management -->
+                    <div class="config-card" data-agent="seo-management" data-price="150">
+                        <div class="config-check"></div>
+                        <div class="config-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 20V10" />
+                                <path d="M18 20V4" />
+                                <path d="M6 20v-4" />
+                            </svg>
+                        </div>
+                        <h4 class="config-name">SEO Management</h4>
+                        <p class="config-price">+$150/mo</p>
+                    </div>
+
+                    <!-- Growth Dashboard -->
+                    <div class="config-card" data-agent="growth-dashboard" data-price="50">
+                        <div class="config-check"></div>
+                        <div class="config-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                            </svg>
+                        </div>
+                        <h4 class="config-name">Growth Dashboard</h4>
+                        <p class="config-price">+$50/mo</p>
+                    </div>
+                </div>
+
+                <!-- Summary Panel -->
+                <div class="config-summary">
+                    <div class="summary-header">
+                        <h3>Your Plan Estimate</h3>
+                        <p>Base Platform Fee: <span class="base-fee">$99/mo</span></p>
+                    </div>
+                    <div class="summary-total">
+                        <span class="currency">$</span>
+                        <span class="total-amount" id="configTotal">99</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <button class="btn btn-primary btn-block" id="deployTeamBtn">Start Your Plan</button>
+                    <p class="summary-note">Includes 14-day free trial</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- ========== TEAM SECTION ========== -->
     <section class="team" id="team">

@@ -260,4 +260,66 @@ document.addEventListener('DOMContentLoaded', () => {
         'background: linear-gradient(135deg, #0C3483, #3498DB); color: white; padding: 10px 20px; border-radius: 5px 0 0 5px; font-weight: bold; font-size: 14px;',
         'background: #F0F8FF; color: #0C3483; padding: 10px 20px; border-radius: 0 5px 5px 0; font-weight: bold; font-size: 14px;'
     );
+    // =========================================================================
+    // CONFIGURATOR - Build Your Growth Team
+    // =========================================================================
+    const configCards = document.querySelectorAll('.config-card');
+    const configTotalElement = document.getElementById('configTotal');
+    const deployTeamBtn = document.getElementById('deployTeamBtn');
+
+    // Base platform fee
+    let totalPrice = 99;
+
+    if (configCards.length > 0 && configTotalElement) {
+        configCards.forEach(card => {
+            card.addEventListener('click', () => {
+                // Toggle active state
+                card.classList.toggle('active');
+
+                // Get price from data attribute
+                const price = parseInt(card.dataset.price);
+
+                // Update total price
+                if (card.classList.contains('active')) {
+                    totalPrice += price;
+                } else {
+                    totalPrice -= price;
+                }
+
+                // Animate the number change
+                // Simple animation effect
+                configTotalElement.style.transform = 'scale(1.2)';
+                configTotalElement.style.color = '#3498DB';
+
+                setTimeout(() => {
+                    configTotalElement.textContent = totalPrice;
+                    configTotalElement.style.transform = 'scale(1)';
+                    configTotalElement.style.color = '#0C3483';
+                }, 200);
+            });
+        });
+
+        // Deploy Team Button
+        if (deployTeamBtn) {
+            deployTeamBtn.addEventListener('click', () => {
+                // Collect selected services
+                const selectedServices = [];
+                document.querySelectorAll('.config-card.active').forEach(card => {
+                    selectedServices.push(card.querySelector('.config-name').textContent);
+                });
+
+                if (selectedServices.length === 0) {
+                    alert('Please select at least one service to build your plan!');
+                    return;
+                }
+
+                // For now, just scroll to contact and perhaps log or alert
+                // ideally this would pre-fill a form
+                alert(`Great choice! Your custom plan configuration:\n\n${selectedServices.join('\n')}\n\nEstimated: $${totalPrice}/mo\n\nRedirecting to schedule your onboarding...`);
+
+                // Scroll to footer contact or pricing
+                document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    }
 });
