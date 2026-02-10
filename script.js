@@ -52,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentValue = startValue + (target - startValue) * easeOut;
 
             // Format number
-            if (suffix === 'M+') {
-                element.textContent = currentValue.toFixed(1) + 'M+';
+            if (suffix === 'M') {
+                element.textContent = currentValue.toFixed(1) + 'M';
             } else if (suffix === 'x') {
                 element.textContent = Math.floor(currentValue) + 'x';
             } else if (suffix === '%') {
-                element.textContent = Math.floor(currentValue) + '%';
+                element.textContent = currentValue.toFixed(1) + '%';
             } else {
                 element.textContent = Math.floor(currentValue) + '+';
             }
@@ -170,24 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // =========================================================================
-    // TESTIMONIALS - Pause on Hover
-    // =========================================================================
-    const testimonialsTrack = document.querySelector('.testimonials-track');
-
-    if (testimonialsTrack) {
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-
-        testimonialCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                testimonialsTrack.style.animationPlayState = 'paused';
-            });
-
-            card.addEventListener('mouseleave', () => {
-                testimonialsTrack.style.animationPlayState = 'running';
-            });
-        });
-    }
 
     // =========================================================================
     // PARALLAX EFFECT - Hero Shapes

@@ -707,6 +707,126 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
+   Waitlist Section - High Conversion Glassmorphism
+   -------------------------------------------------------------------------- */
+.waitlist {
+    padding: 80px 0;
+    background: var(--gradient-hero);
+    position: relative;
+    z-index: 5;
+    margin-top: -40px;
+    /* Slight overlap for better transition */
+}
+
+.waitlist-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.waitlist-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    padding: 60px;
+    border-radius: 24px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    transition: all var(--transition-smooth);
+}
+
+.waitlist-card:hover {
+    background: var(--glass-bg-hover);
+    border-color: var(--glass-border-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+.waitlist-tag {
+    display: inline-block;
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--color-bright-blue);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.waitlist-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.waitlist-subtitle {
+    font-size: 18px;
+    color: var(--color-medium-gray);
+    margin-bottom: 32px;
+}
+
+.waitlist-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.benefit-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--color-bright-blue);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 900;
+    flex-shrink: 0;
+}
+
+.benefit-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-dark-gray);
+}
+
+.waitlist-cta {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .waitlist {
+        padding: 60px 0;
+    }
+
+    .waitlist-card {
+        padding: 40px 24px;
+    }
+
+    .waitlist-benefits {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* --------------------------------------------------------------------------
    Stats Bar - Animated Counters
    -------------------------------------------------------------------------- */
 .stats-bar {
@@ -1082,104 +1202,6 @@ ul {
     font-size: 15px;
 }
 
-/* --------------------------------------------------------------------------
-   Testimonials - Elegant Carousel
-   -------------------------------------------------------------------------- */
-.testimonials {
-    padding: 100px 0;
-    background: var(--color-light-gray);
-    overflow: hidden;
-}
-
-.testimonials-wrapper {
-    position: relative;
-    max-width: 100%;
-}
-
-.testimonials-track {
-    display: flex;
-    gap: 30px;
-    animation: scrollTestimonials 30s linear infinite;
-}
-
-@keyframes scrollTestimonials {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-.testimonials-track:hover {
-    animation-play-state: paused;
-}
-
-.testimonial-card {
-    flex-shrink: 0;
-    width: 400px;
-    background: var(--color-white);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-base);
-}
-
-.testimonial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
-}
-
-.testimonial-stars {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 20px;
-}
-
-.testimonial-stars span {
-    color: #FFD700;
-    font-size: 24px;
-}
-
-.testimonial-quote {
-    font-size: 18px;
-    color: var(--color-dark-blue);
-    font-style: italic;
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.author-avatar {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--gradient-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 20px;
-}
-
-.author-info h4 {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--color-dark-blue);
-    margin-bottom: 2px;
-}
-
-.author-info p {
-    font-size: 14px;
-    color: var(--color-light-text);
-}
 
 /* --------------------------------------------------------------------------
    Team Section
