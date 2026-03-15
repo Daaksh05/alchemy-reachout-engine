@@ -268,7 +268,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const deployTeamBtn = document.getElementById('deployTeamBtn');
 
     // Base platform fee
-    let totalPrice = 99;
+    let totalPrice = 49;
+    let totalPriceINR = 3900;
 
     if (configCards.length > 0 && configTotalElement) {
         configCards.forEach(card => {
@@ -276,23 +277,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Toggle active state
                 card.classList.toggle('active');
 
-                // Get price from data attribute
+                // Get price from data attributes
                 const price = parseInt(card.dataset.price);
+                const priceINR = parseInt(card.dataset.priceInr) || (price * 80);
 
                 // Update total price
                 if (card.classList.contains('active')) {
                     totalPrice += price;
+                    totalPriceINR += priceINR;
                 } else {
                     totalPrice -= price;
+                    totalPriceINR -= priceINR;
                 }
 
                 // Animate the number change
-                // Simple animation effect
-                configTotalElement.style.transform = 'scale(1.2)';
+                configTotalElement.style.transform = 'scale(1.1)';
                 configTotalElement.style.color = '#3498DB';
 
                 setTimeout(() => {
-                    configTotalElement.textContent = totalPrice;
+                    configTotalElement.textContent = `$${totalPrice} / ₹${totalPriceINR.toLocaleString()}`;
                     configTotalElement.style.transform = 'scale(1)';
                     configTotalElement.style.color = '#0C3483';
                 }, 200);
@@ -315,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // For now, just scroll to contact and perhaps log or alert
                 // ideally this would pre-fill a form
-                alert(`Great choice! Your custom plan configuration:\n\n${selectedServices.join('\n')}\n\nEstimated: $${totalPrice}/mo\n\nRedirecting to schedule your onboarding...`);
+                alert(`Excellent choice! Your managed growth configuration:\n\n${selectedServices.join('\n')}\n\nEstimated Monthly Investment: $${totalPrice}\n\nOur founders will contact you within 24 hours to begin your onboarding.`);
 
                 // Scroll to footer contact or pricing
                 document.querySelector('#pricing').scrollIntoView({ behavior: 'smooth' });
@@ -368,5 +371,30 @@ document.addEventListener('DOMContentLoaded', () => {
         sdrSlider.addEventListener('input', updateComparison);
         // Initialize
         updateComparison();
+    }
+
+    // =========================================================================
+    // WAITLIST FORM HANDLING
+    // =========================================================================
+    const waitlistForm = document.getElementById('waitlistForm');
+    if (waitlistForm) {
+        waitlistForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('userEmail').value;
+            const submitBtn = waitlistForm.querySelector('.mega-waitlist-submit');
+            
+            // Animation for feedback
+            submitBtn.textContent = 'Securing Spot...';
+            submitBtn.style.opacity = '0.7';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                alert(`Transformation Secured! We've reserved a spot for ${email}. Our founders will reach out shortly.`);
+                submitBtn.textContent = 'Access Secured';
+                submitBtn.style.background = '#2ecc71'; // Green for success
+                submitBtn.style.opacity = '1';
+                waitlistForm.reset();
+            }, 1200);
+        });
     }
 });

@@ -36,31 +36,30 @@
 
 ## 🚀 Our Mission
 
-Alchemy AI is not just a tool—it's a high-performance growth service. We leverage a proprietary stack of 5 specialized AI agents to automate lead generation, outreach, and content strategy. 
+Alchemy AI is not a software product—it is a **Full-Stack Growth Service**. We deploy a proprietary trio of AI agents to manage your entire sales and content pipeline. 
 
-**The Difference?** We don't just give you the software; our founders personally manage the technology to deliver qualified prospects directly to your doorstep. No management, no hiring, just results.
+**The Alchemy Advantage:** We handle the engineering, the ingestion, and the optimization. You receive qualified leads and high-performance content directly. No management, no technical overhead, just pure growth.
 
 ---
 
-## 🛠️ Our Service Stack
+## 🛠️ Our Managed Service Trio
 
-We utilize five specialized agents to provide comprehensive growth services:
+We utilize 3 fully developed agents to provide comprehensive growth services:
 
-| Agent | Service Provided | Key Benefit |
+| Service Agent | Core Features | Key Benefit |
 | :--- | :--- | :--- |
-| **🔍 Lead Finder** | Data Mining | Identifies hyper-qualified leads from 150+ sources |
-| **📧 Lead Outreach** | Engagement | Scaled, personalized multi-channel outreach |
-| **🎨 Content Repurposer**| Marketing | Multiplies 1 piece of content into 10+ formats |
-| **📊 CMS Dashboard** | Reporting | Real-time campaign monitoring and analytics |
-| **📈 SEO Copilot** | Strategy | Managed audits and keyword optimization |
+| **🔍 Lead Generation** | AI Neural Scoring (Groq), Firebase Persistent Vault, Kanban Pipeline | Precise, hyper-targeted prospecting |
+| **🎨 Content Repurposing** | 50+ Variations, 7 Formats, SDXL Image Gen, 4-Stage Workflow | 10x content output from 1 input |
+| **⚡ Alchemy Growth Engine** | Ad Copy & SEO Engines, City Page Gen, Supabase Secured | Enterprise-grade scaling & ranking |
 
 ---
 
-## 🛠 Technology Behind the Service
+## 🛠 Technology & Security
 
+- **Lead Intel**: Firebase Firestore (Mumbai), Groq Neural Scoring, Custom Secure Auth
+- **Content Engine**: SDXL Visual Gen, Multi-Platform Transformer, Premium White UI
+- **Growth Core**: Supabase Secured DB, SEO Linking Engine, Media Lab Archive
 - **Frontend**: HTML5, CSS3 (Vanilla), JavaScript (ES6+)
-- **Animations**: CSS Keyframes, Intersection Observer API
-- **Design System**: Glassmorphism, Premium Gradients, Responsive Layout
 
 ---
 

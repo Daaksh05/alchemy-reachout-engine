@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Alchemy AI - Done-for-you growth service. We manage lead generation, outreach, content, and SEO. 500+ companies trust us. Join them.">
+        content="Alchemy AI - Exquisite managed growth services. We deploy a premium trio of AI agents to handle your lead generation, content repurposing, and enterprise scaling.">
     <meta name="keywords" content="AI, sales automation, lead generation, AI agents, marketing automation">
     <title>Alchemy AI - Turn Prospects Into Customers</title>
 
@@ -16,7 +16,109 @@
         rel="stylesheet">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=2.0">
+    
+    <style>
+        /* Force Massive Transformation Section */
+        #transformation-cta {
+            padding: 200px 0 !important;
+            background: #060912 !important;
+            background: radial-gradient(circle at center, #1a2a44 0%, #060912 100%) !important;
+            color: #ffffff !important;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: block !important;
+        }
+
+        #transformation-cta .section-title {
+            font-size: clamp(56px, 8vw, 90px) !important;
+            color: #ffffff !important;
+            margin-bottom: 30px !important;
+            font-weight: 900 !important;
+            line-height: 1.1;
+        }
+
+        #transformation-cta .section-subtitle {
+            font-size: 26px !important;
+            color: rgba(255,255,255,0.8) !important;
+            max-width: 900px !important;
+            margin: 0 auto 80px !important;
+            line-height: 1.6;
+        }
+
+        .mega-waitlist-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mega-waitlist-form {
+            display: flex;
+            gap: 24px;
+            background: rgba(255,255,255,0.07);
+            padding: 20px;
+            border-radius: 40px;
+            border: 2px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(40px);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+        }
+
+        .mega-waitlist-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 24px 32px;
+            color: #ffffff;
+            font-size: 24px;
+            outline: none;
+            font-weight: 600;
+        }
+
+        .mega-waitlist-submit {
+            padding: 24px 60px;
+            background: #3498DB;
+            color: #ffffff;
+            border: none;
+            border-radius: 24px;
+            font-weight: 900;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            white-space: nowrap;
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.4);
+        }
+
+        .mega-waitlist-submit:hover {
+            transform: scale(1.08);
+            background: #4ab1f5;
+            box-shadow: 0 0 50px rgba(52, 152, 219, 0.7);
+        }
+
+        @media (max-width: 900px) {
+            #transformation-cta {
+                padding: 120px 20px !important;
+            }
+            .mega-waitlist-form {
+                flex-direction: column;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            .mega-waitlist-input {
+                background: rgba(255,255,255,0.08);
+                border-radius: 24px;
+                margin-bottom: 24px;
+                border: 2px solid rgba(255,255,255,0.1);
+            }
+            .mega-waitlist-submit {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -30,7 +132,6 @@
 
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#agents" class="nav-link">Agents</a></li>
-
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 <li><a href="#team" class="nav-link">Team</a></li>
@@ -69,8 +170,8 @@
                 </h1>
 
                 <p class="hero-subtitle">
-                    Done-For-You Growth Service<br>
-                    We Find Leads. We Reach Out. We Manage Everything.<br>
+                    Exquisite Done-For-You Growth Services<br>
+                    We manage your complete pipeline with 3 specialized AI agents.<br>
                     You Focus On Closing.
                 </p>
 
@@ -147,7 +248,7 @@
                         </li>
                         <li class="benefit-item">
                             <span class="benefit-icon">✓</span>
-                            <span class="benefit-text">Shape the product as we scale</span>
+                            <span class="benefit-text">Shape our service roadmap as we scale</span>
                         </li>
                     </ul>
                 </div>
@@ -195,13 +296,13 @@
                     Growth Services <span class="accent-text">We Provide</span>
                 </h2>
                 <p class="section-subtitle">
-                    5 specialized AI agents working 24/7 to handle your lead generation,
-                    outreach, content, and SEO. Done-for-you service.
+                    We provide three fully managed AI-powered services to automate your entire growth engine.
+                    No management required—our team handles the technology for you.
                 </p>
             </div>
 
             <div class="agents-grid stagger-fade">
-                <!-- Agent 1: Lead Finder -->
+                <!-- Agent 1: Lead Generation Agent -->
                 <div class="agent-card fade-in">
                     <div class="agent-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -210,110 +311,76 @@
                             <path d="M11 8v6M8 11h6" />
                         </svg>
                     </div>
-                    <h3 class="agent-name">Lead Finder Agent</h3>
-                    <p class="agent-tagline">Find Your Best Customers</p>
+                    <h3 class="agent-name">Lead Generation Agent</h3>
+                    <p class="agent-tagline">AI-Powered Prospecting</p>
                     <p class="agent-description">
-                        We discover qualified prospects across 150+ sources and deliver 20-40 leads to you weekly.
+                        Hyper-targeted lead discovery with neural scoring and persistent tracking.
                     </p>
                     <ul class="agent-features">
-                        <li>Automated search across platforms</li>
-                        <li>Smart filtering by size & industry</li>
-                        <li>Real-time data updates</li>
+                        <li>Intelligence Ingestion (CSV + Paste)</li>
+                        <li>AI Neural Scoring via Groq</li>
+                        <li>Entity Vault (Firebase Persistent)</li>
+                        <li>Sales Pipeline - Kanban View</li>
+                        <li>Intelligence Delivery (CSV + Reports)</li>
+                        <li>Performance Reporting & Infrastructure Guard</li>
+                        <li>Firebase Firestore (Mumbai Region)</li>
+                        <li>Custom Secure Auth</li>
                     </ul>
-                    <a href="#" class="agent-link">Learn More</a>
                 </div>
 
-                <!-- Agent 2: Lead Outreach -->
-                <div class="agent-card fade-in">
-                    <div class="agent-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 2L11 13" />
-                            <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-                        </svg>
-                    </div>
-                    <h3 class="agent-name">Lead Outreach Agent</h3>
-                    <p class="agent-tagline">Personalized At Scale</p>
-                    <p class="agent-description">
-                        We send personalized, multi-channel outreach campaigns on your behalf to every lead.
-                    </p>
-                    <ul class="agent-features">
-                        <li>AI-powered personalization engine</li>
-                        <li>Multi-channel (email, LinkedIn, WhatsApp)</li>
-                        <li>Automatic follow-up sequences</li>
-                    </ul>
-                    <a href="#" class="agent-link">Learn More</a>
-                </div>
-
-                <!-- Agent 3: Content Repurposing -->
+                <!-- Agent 2: Content Repurposing Agent -->
                 <div class="agent-card fade-in">
                     <div class="agent-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                             <path d="M14 2v6h6" />
                             <path d="M12 18v-6" />
-                            <path d="M9 15h6" />
+                            <circle cx="12" cy="15" r="3" />
                         </svg>
                     </div>
                     <h3 class="agent-name">Content Repurposing Agent</h3>
-                    <p class="agent-tagline">Create 10x More Content</p>
+                    <p class="agent-tagline">Omnichannel Content Multiplication</p>
                     <p class="agent-description">
-                        We transform your content into 60+ posts/month and schedule them across all channels.
+                        Multiply one input into 50+ variations across 7 platforms.
                     </p>
                     <ul class="agent-features">
-                        <li>Auto-transform to blogs, social, videos</li>
-                        <li>10+ content formats in seconds</li>
-                        <li>Schedule posts across all channels</li>
+                        <li>50+ Content Variations from One Input</li>
+                        <li>7 Platform-Specific Formats</li>
+                        <li>SDXL Image Generation</li>
+                        <li>White Premium Managed UI</li>
+                        <li>4-Stage Pipeline Workflow</li>
+                        <li>Automated Visual Assets</li>
                     </ul>
-                    <a href="#" class="agent-link">Learn More</a>
                 </div>
 
-                <!-- Agent 4: CMS Dashboard -->
+                <!-- Agent 3: Alchemy Growth Engine -->
                 <div class="agent-card fade-in">
                     <div class="agent-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="3" width="18" height="18" rx="2" />
-                            <path d="M3 9h18" />
-                            <path d="M9 21V9" />
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                         </svg>
                     </div>
-                    <h3 class="agent-name">CMS Dashboard Agent</h3>
-                    <p class="agent-tagline">Control Everything</p>
+                    <h3 class="agent-name">Alchemy Growth Engine</h3>
+                    <p class="agent-tagline">The Enterprise Standard</p>
                     <p class="agent-description">
-                        We provide one dashboard showing all agent activities, metrics, and your growth results.
+                        Our full suite of specialized marketing and SEO engines.
                     </p>
                     <ul class="agent-features">
-                        <li>Single view for all agent activities</li>
-                        <li>Real-time analytics & metrics</li>
-                        <li>Team collaboration tools</li>
+                        <li>Ad Copy & SEO Content Engines</li>
+                        <li>City Pages & Internal Links Generator</li>
+                        <li>Media Lab + Managed Archive</li>
+                        <li>Expert Refinement Suite</li>
+                        <li>Bulk Publishing & CSV Export</li>
+                        <li>Client Reporting & Onboarding</li>
+                        <li>Supabase DB + Storage Secured</li>
                     </ul>
-                    <a href="#" class="agent-link">Learn More</a>
-                </div>
-
-                <!-- Agent 5: SEO Copilot -->
-                <div class="agent-card fade-in">
-                    <div class="agent-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 20V10" />
-                            <path d="M18 20V4" />
-                            <path d="M6 20v-4" />
-                            <circle cx="12" cy="6" r="2" />
-                        </svg>
-                    </div>
-                    <h3 class="agent-name">SEO Copilot Agent</h3>
-                    <p class="agent-tagline">Rank Higher, Faster</p>
-                    <p class="agent-description">
-                        We audit your site, identify opportunities, and implement SEO improvements automatically.
-                    </p>
-                    <ul class="agent-features">
-                        <li>Automated SEO audits & detection</li>
-                        <li>Smart improvement recommendations</li>
-                        <li>Rank position tracking</li>
-                    </ul>
-                    <a href="#" class="agent-link">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
+
+
+
 
 
 
@@ -368,6 +435,8 @@
                     </p>
                 </div>
 
+
+
                 <div class="feature-card fade-in">
                     <div class="feature-icon">🌍</div>
                     <h3 class="feature-title">Global Support</h3>
@@ -393,7 +462,7 @@
                 <!-- Service Selection Grid -->
                 <div class="config-grid">
                     <!-- Lead Generation -->
-                    <div class="config-card" data-agent="lead-generation" data-price="100">
+                    <div class="config-card" data-agent="lead-generation" data-price="99" data-price-inr="7900">
                         <div class="config-check"></div>
                         <div class="config-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -401,75 +470,61 @@
                                 <path d="m21 21-4.35-4.35" />
                             </svg>
                         </div>
-                        <h4 class="config-name">Lead Generation</h4>
-                        <p class="config-price">+$100/mo</p>
+                        <h4 class="config-name">Lead Gen Service</h4>
+                        <p class="config-price">+$99 / ₹7,900</p>
                     </div>
 
-                    <!-- Outreach Campaigns -->
-                    <div class="config-card" data-agent="outreach-campaigns" data-price="150">
-                        <div class="config-check"></div>
-                        <div class="config-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 2L11 13" />
-                                <path d="M22 2l-7 20-4-9-9-4 20-7z" />
-                            </svg>
-                        </div>
-                        <h4 class="config-name">Outreach Campaigns</h4>
-                        <p class="config-price">+$150/mo</p>
-                    </div>
 
                     <!-- Content Repurposing -->
-                    <div class="config-card" data-agent="content-repurposing" data-price="100">
+                    <div class="config-card" data-agent="content-repurposing" data-price="99" data-price-inr="7900">
                         <div class="config-check"></div>
                         <div class="config-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" />
                             </svg>
                         </div>
-                        <h4 class="config-name">Content Repurposing</h4>
-                        <p class="config-price">+$100/mo</p>
+                        <h4 class="config-name">Content Service</h4>
+                        <p class="config-price">+$99 / ₹7,900</p>
                     </div>
 
-                    <!-- SEO Management -->
-                    <div class="config-card" data-agent="seo-management" data-price="150">
+                    <!-- Growth Engine -->
+                    <div class="config-card" data-agent="growth-engine" data-price="199" data-price-inr="15900">
                         <div class="config-check"></div>
                         <div class="config-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 20V10" />
-                                <path d="M18 20V4" />
-                                <path d="M6 20v-4" />
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
                             </svg>
                         </div>
-                        <h4 class="config-name">SEO Management</h4>
-                        <p class="config-price">+$150/mo</p>
+                        <h4 class="config-name">Growth Engine</h4>
+                        <p class="config-price">+$199 / ₹15,900</p>
                     </div>
 
-                    <!-- Growth Dashboard -->
-                    <div class="config-card" data-agent="growth-dashboard" data-price="50">
-                        <div class="config-check"></div>
+                    <!-- Base Platform (Managed) -->
+                    <div class="config-card active" data-agent="managed-platform" data-price="0" style="pointer-events: none; opacity: 0.8;">
+                        <div class="config-check" style="background: var(--color-bright-blue);"></div>
                         <div class="config-icon">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             </svg>
                         </div>
-                        <h4 class="config-name">Growth Dashboard</h4>
-                        <p class="config-price">+$50/mo</p>
+                        <h4 class="config-name">Managed Platform</h4>
+                        <p class="config-price">Included</p>
                     </div>
                 </div>
 
                 <!-- Summary Panel -->
                 <div class="config-summary">
                     <div class="summary-header">
-                        <h3>Your Plan Estimate</h3>
-                        <p>Base Platform Fee: <span class="base-fee">$99/mo</span></p>
+                        <h3>Service Selection</h3>
+                        <p>Base Setup Fee: <span class="base-fee">$49 / ₹3,900</span></p>
                     </div>
                     <div class="summary-total">
-                        <span class="currency">$</span>
-                        <span class="total-amount" id="configTotal">99</span>
+                        <h2 class="total-amount" id="configTotal">$49 / ₹3,900</h2>
                         <span class="period">/month</span>
                     </div>
-                    <button class="btn btn-primary btn-block" id="deployTeamBtn">Start Your Plan</button>
-                    <p class="summary-note">Includes 14-day free trial</p>
+                    <button class="btn btn-primary btn-block" id="deployTeamBtn">Start Your Service</button>
+                    <p class="summary-note">Fully managed by our experts</p>
                 </div>
             </div>
         </div>
@@ -542,6 +597,8 @@
         </div>
     </section>
 
+
+
     <!-- ========== TEAM SECTION ========== -->
     <section class="team" id="team">
         <div class="container">
@@ -561,7 +618,10 @@
                     <h3 class="team-name">Sanjay Kumaran</h3>
                     <p class="team-role">CEO & Co-Founder</p>
                     <p class="team-bio">
-                        Full-stack developer building AI-powered platforms at scale. Experience spanning production systems on modern infrastructure (Next.js, TypeScript, AWS, PostgreSQL) with hands-on expertise in SEO, GEO and scalable system design. . Designing Alchemy's service delivery model to make growth accessible to every business.
+                        Full-stack developer building AI-powered platforms at scale. Experience spanning production
+                        systems on modern infrastructure (Next.js, TypeScript, AWS, PostgreSQL) with hands-on expertise
+                        in SEO, GEO and scalable system design. . Designing Alchemy's service delivery model to make
+                        growth accessible to every business.
                     </p>
                     <div class="team-social">
                         <a href="https://www.linkedin.com/in/sanjaykumaranb/" class="social-link" aria-label="LinkedIn">
@@ -641,66 +701,64 @@
                 <div class="pricing-card fade-in">
                     <div class="pricing-header">
                         <h3 class="pricing-name">Lead Generation</h3>
-                        <p class="pricing-description">Done-For-You Lead Service</p>
+                        <p class="pricing-description">Managed Prospecting Service</p>
                     </div>
                     <div class="pricing-price">
-                        <span class="currency">$</span>
-                        <span class="amount" data-monthly="299" data-annual="239">299</span>
-                        <span class="period">/month</span>
+                        <div class="usd-price">$99<span class="period">/mo</span></div>
+                        <div class="inr-price">₹7,900<span class="period">/mo</span></div>
                     </div>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Lead Finder Agent
+                            Full Lead Generation Agent
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Basic Analytics
+                            AI Neural Scoring (Groq)
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Email Support
+                            Entity Vault Persistence
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Up to 1,000 leads/month
+                            Weekly Intelligence Reports
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            1 User Account
+                            Infrastructure Guarding
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-outline btn-block">Get Started</a>
+                    <a href="#" class="btn btn-outline btn-block">Start Service</a>
                 </div>
 
                 <!-- Professional Plan (Featured) -->
                 <div class="pricing-card featured fade-in">
                     <span class="popular-badge">⭐ MOST POPULAR</span>
                     <div class="pricing-header">
-                        <h3 class="pricing-name">Complete Growth</h3>
-                        <p class="pricing-description">Everything Our Team Can Do</p>
+                        <h3 class="pricing-name">The Growth Bundle</h3>
+                        <p class="pricing-description">Most Requested Managed Service</p>
                     </div>
                     <div class="pricing-price">
-                        <span class="currency">$</span>
-                        <span class="amount" data-monthly="999" data-annual="799">999</span>
-                        <span class="period">/month</span>
+                        <div class="usd-price">$249<span class="period">/mo</span></div>
+                        <div class="inr-price">₹19,900<span class="period">/mo</span></div>
                     </div>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            All 5 AI Agents
+                            All 3 Premium AI Services
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
@@ -712,107 +770,94 @@
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Priority Support
+                            Priority Concierge Support
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Unlimited Leads
+                            Unlimited Pipeline Capacity
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            5 User Accounts
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                <path d="M20 6L9 17l-5-5" />
-                            </svg>
-                            API Access
+                            Expert Human Review
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-primary btn-block">Get Started</a>
+                    <a href="#" class="btn btn-primary btn-block">Start Your Service</a>
                 </div>
 
                 <!-- Enterprise Plan -->
                 <div class="pricing-card fade-in">
                     <div class="pricing-header">
-                        <h3 class="pricing-name">Premium Partnership</h3>
-                        <p class="pricing-description">Dedicated Growth Team</p>
+                        <h3 class="pricing-name">The Growth Engine</h3>
+                        <p class="pricing-description">Full-Scale Enterprise Transformation</p>
                     </div>
                     <div class="pricing-price">
-                        <span class="amount custom">Custom Pricing</span>
+                        <div class="usd-price">$499<span class="period">/mo</span></div>
+                        <div class="inr-price">₹39,900<span class="period">/mo</span></div>
                     </div>
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Everything in Professional
+                            Full Trio + Growth Engine
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Dedicated Account Manager
+                            Supabase DB & Secured Storage
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Custom Integrations
+                            City Pages & SEO Links Engine
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            SLA & Uptime Guarantee
+                            Media Lab + Managed Archive
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            Custom Workflows
+                            Ad Copy & SEO Content Automation
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
-                            On-Premise Option
+                            Bulk Publishing & Client Export
                         </li>
                     </ul>
-                    <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
+                    <a href="#" class="btn btn-outline btn-block">Contact Founders</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== MEGA CTA SECTION ========== -->
-    <section class="cta-section" id="cta">
-        <!-- Background Shapes -->
-        <div class="cta-bg-shapes">
-            <svg class="cta-shape cta-shape-1" viewBox="0 0 200 200">
-                <polygon points="100,0 200,100 100,200 0,100" fill="#FFFFFF" />
-            </svg>
-            <svg class="cta-shape cta-shape-2" viewBox="0 0 200 200">
-                <polygon points="100,0 200,100 100,200 0,100" fill="#FFFFFF" />
-            </svg>
-        </div>
-
+    <!-- ========== MASSIVE TRANSFORMATION SECTION ========== -->
+    <section id="transformation-cta">
         <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Stop Managing Growth Yourself?</h2>
-                <p class="cta-subtitle">Let our team handle your lead generation, outreach, and content. You focus on
-                    closing.</p>
-
-                <div class="cta-buttons">
-                    <a href="#pricing" class="btn btn-white btn-lg">Start Free Trial</a>
-                    <a href="#how-it-works" class="btn btn-outline-white btn-lg">Schedule Demo</a>
+            <h2 class="section-title">Ready for Your <span class="accent-text" style="-webkit-text-fill-color: initial; color: #3498DB;">Transformation?</span></h2>
+            <p class="section-subtitle">
+                Quit handling the engine. Focus on the steering. Join our exclusive managed growth service.
+            </p>
+            
+            <div class="mega-waitlist-container">
+                <form class="mega-waitlist-form" id="waitlistForm">
+                    <input type="email" class="mega-waitlist-input" placeholder="Enter your founder email" required id="userEmail">
+                    <button type="submit" class="mega-waitlist-submit">Get Managed Growth Now →</button>
+                </form>
+                <div class="cta-note" style="margin-top: 40px; font-size: 18px; color: #3498DB; font-weight: 800; text-transform: uppercase; letter-spacing: 3px;">
+                    Only 5 Client Spots Remaining
                 </div>
-
-                <p class="cta-note">No credit card required • 14-day free trial • Full access to all features</p>
             </div>
         </div>
     </section>

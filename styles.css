@@ -888,6 +888,53 @@ ul {
     opacity: 0.4;
 }
 
+/* Configuration Summary Display */
+.total-amount-display {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    display: block;
+    margin-bottom: 8px;
+    transition: all var(--transition-smooth);
+}
+
+.usd-price,
+.inr-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    display: inline-block;
+    margin-bottom: 8px;
+    transition: all var(--transition-smooth);
+}
+
+.pricing-price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.pricing-price .currency-symbol {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-dark-blue);
+}
+
+.pricing-price .price-value {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--color-dark-blue);
+    line-height: 1;
+}
+
+.pricing-price .price-period {
+    font-size: 18px;
+    color: var(--color-medium-gray);
+    font-weight: 500;
+}
+
 .stat-value {
     font-size: 56px;
     font-weight: 800;
@@ -1501,6 +1548,22 @@ ul {
 .period {
     font-size: 16px;
     color: var(--color-medium-gray);
+    margin-left: 4px;
+}
+
+.usd-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--color-bright-blue);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.inr-price {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-dark-blue);
+    opacity: 0.8;
 }
 
 .pricing-features {
@@ -2159,6 +2222,9 @@ ul {
 .summary-total {
     text-align: center;
     margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px solid rgba(12, 52, 131, 0.08);
+    border-bottom: 1px solid rgba(12, 52, 131, 0.08);
 }
 
 .summary-total .amount {
@@ -2167,10 +2233,10 @@ ul {
 }
 
 .total-amount {
-    font-size: 56px;
+    font-size: 32px;
     font-weight: 800;
-    color: var(--color-bright-blue);
-    line-height: 1;
+    color: var(--color-dark-blue);
+    line-height: 1.2;
 }
 
 .summary-note {
@@ -2265,6 +2331,7 @@ ul {
 
 input[type=range] {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 8px;
     background: var(--color-light-gray);
@@ -2281,8 +2348,8 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     background: var(--color-bright-blue);
     cursor: pointer;
-    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
     transition: transform 0.2s;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.4);
 }
 
 input[type=range]::-webkit-slider-thumb:hover {
@@ -2431,8 +2498,152 @@ input[type=range]::-webkit-slider-thumb:hover {
         grid-template-columns: 1fr;
         gap: 40px;
     }
+}
 
-    .comparison-chart {
-        height: 300px;
+/* --------------------------------------------------------------------------
+   Agent Impact Section - Before & After (Minimal & Organized)
+   -------------------------------------------------------------------------- */
+@media (max-width: 850px) {
+    .comparison-layout {
+        grid-template-columns: 1fr;
+    }
+    .comparison-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
     }
 }
+
+/* --------------------------------------------------------------------------
+   CTA Section (Massive & Ultra-Bold)
+   -------------------------------------------------------------------------- */
+.cta {
+    padding: 180px 0;
+    background: #060912 !important; /* Force black background */
+    background: radial-gradient(circle at center, #1a2a44 0%, #060912 100%) !important;
+    color: var(--color-white) !important;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: var(--color-bright-blue);
+    filter: blur(150px);
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.cta .section-title {
+    font-size: clamp(48px, 6vw, 72px) !important;
+    color: var(--color-white) !important;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.cta .section-subtitle {
+    font-size: 24px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    line-height: 1.5;
+}
+
+.waitlist-form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.waitlist-form {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    transition: all 0.4s ease;
+}
+
+.waitlist-form:focus-within {
+    border-color: var(--color-bright-blue);
+    box-shadow: 0 40px 100px rgba(52, 152, 219, 0.2);
+    transform: translateY(-5px);
+}
+
+.waitlist-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 20px 30px;
+    color: var(--color-white);
+    font-size: 20px;
+    outline: none;
+    font-weight: 500;
+}
+
+.waitlist-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.waitlist-submit {
+    padding: 20px 50px;
+    background: var(--color-bright-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    white-space: nowrap;
+}
+
+.waitlist-submit:hover {
+    transform: scale(1.05);
+    background: #4ab1f5;
+    box-shadow: 0 0 30px rgba(52, 152, 219, 0.6);
+}
+
+.cta-note {
+    margin-top: 32px;
+    font-size: 16px;
+    color: var(--color-bright-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 800px) {
+    .cta {
+        padding: 120px 20px;
+    }
+    .waitlist-form {
+        flex-direction: column;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+    .waitlist-input {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        margin-bottom: 20px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        padding: 24px;
+    }
+    .waitlist-submit {
+        width: 100%;
+        padding: 24px;
+    }
+}
+
