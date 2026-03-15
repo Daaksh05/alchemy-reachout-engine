@@ -397,4 +397,83 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1200);
         });
     }
+
+    // =========================================================================
+    // FAQ ACCORDION LOGIC
+    // =========================================================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close others for a clean single-open behavior
+            faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+            
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // =========================================================================
+    // STATS COUNTER LOGIC (Results Bar) via IntersectionObserver
+    // =========================================================================
+    const statsObserverOptions = {
+        threshold: 0.5
+    };
+
+    const animateValue = (el, target, isCurrency) => {
+        let start = 0;
+        const duration = 1500;
+        const startTime = performance.now();
+
+        const update = (now) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const current = Math.floor(progress * target);
+            
+            if (isCurrency) {
+                el.textContent = '$' + (current / 1000).toFixed(0) + 'K+';
+                if (target < 1000) el.textContent = '$' + current.toLocaleString();
+            } else if (target === 10) {
+                el.textContent = current + '×';
+            } else if (el.nextElementSibling.textContent.includes('variation')) {
+                el.textContent = current + '+';
+            } else {
+                el.textContent = current;
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                // Precise final value corrections
+                if (isCurrency) el.textContent = '$60K+';
+                else if (target === 10) el.textContent = '10×';
+                else if (el.nextElementSibling.textContent.includes('variation')) el.textContent = '50+';
+                else el.textContent = target;
+            }
+        };
+
+        requestAnimationFrame(update);
+    };
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const numberEl = entry.target.querySelector('.stat-number');
+                if (numberEl && !numberEl.classList.contains('animated')) {
+                    numberEl.classList.add('animated');
+                    const target = parseInt(numberEl.dataset.target);
+                    const isCurrency = numberEl.dataset.isCurrency === 'true';
+                    animateValue(numberEl, target, isCurrency);
+                }
+            }
+        });
+    }, statsObserverOptions);
+
+    document.querySelectorAll('.result-stat').forEach(stat => statsObserver.observe(stat));
 });
+
