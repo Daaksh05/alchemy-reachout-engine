@@ -1329,12 +1329,12 @@ ul {
 /* Specific framing for each founder to ensure high-quality headshots */
 .team-card:first-child .team-image img {
     object-position: center 20%; 
-    transform: scale(1.3); /* Slightly less aggressive zoom */
+    transform: scale(1.3); 
 }
 
 .team-card:nth-child(2) .team-image img {
-    object-position: center 10%; /* Nudge face down */
-    transform: scale(1.1); /* Zoom out so head is visible */
+    object-position: center 25%; /* Nudging up to show neck/shoulders */
+    transform: scale(1.25);      /* Professional zoom */
 }
 
 .team-card:hover .team-image {
