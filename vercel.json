@@ -11,5 +11,8 @@
       "src": "/(.*)",
       "dest": "main.py"
     }
-  ]
+  ],
+  "env": {
+    "FORCE_REDEPLOY": "2"
+  }
 }
