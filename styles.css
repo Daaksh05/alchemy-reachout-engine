@@ -1328,13 +1328,13 @@ ul {
 
 /* Specific framing for each founder to ensure high-quality headshots */
 .team-card:first-child .team-image img {
-    object-position: center top; 
-    transform: scale(1.6) translateY(8%); /* Zoom in on Sanjay's face */
+    object-position: center 20%; 
+    transform: scale(1.3); /* Slightly less aggressive zoom */
 }
 
 .team-card:nth-child(2) .team-image img {
-    object-position: center center;
-    transform: scale(1.4); /* Zoom in on Daakshayani's face */
+    object-position: center 10%; /* Nudge face down */
+    transform: scale(1.1); /* Zoom out so head is visible */
 }
 
 .team-card:hover .team-image {
