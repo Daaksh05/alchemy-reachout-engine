@@ -1320,21 +1320,36 @@ ul {
     transition: all var(--transition-smooth);
 }
 
-.team-image img {
+.team-placeholder {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    background: linear-gradient(135deg, var(--color-dark-blue), var(--color-bright-blue));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Specific framing for each founder to ensure high-quality headshots */
-.team-card:first-child .team-image img {
-    object-position: center 20%; 
-    transform: scale(1.3); 
+.team-placeholder::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: placeholder-glow 4s infinite alternate;
 }
 
-.team-card:nth-child(2) .team-image img {
-    object-position: center 25%; /* Nudging up to show neck/shoulders */
-    transform: scale(1.25);      /* Professional zoom */
+@keyframes placeholder-glow {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.1); opacity: 0.6; }
 }
 
 .team-card:hover .team-image {
@@ -1342,17 +1357,7 @@ ul {
     box-shadow: 0 0 50px rgba(52, 152, 219, 0.3);
 }
 
-.team-placeholder {
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    font-weight: 700;
-    font-size: 24px;
-}
+
 
 .team-name {
     font-size: 24px;
