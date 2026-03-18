@@ -450,6 +450,14 @@ ul {
     max-width: 500px;
 }
 
+.hero-honest-note {
+    font-size: 14px;
+    color: var(--color-medium-gray);
+    font-style: italic;
+    margin-top: 16px;
+    margin-bottom: 32px;
+}
+
 /* Trust Metrics */
 .trust-metrics {
     display: flex;
@@ -980,6 +988,19 @@ ul {
     gap: 30px;
     position: relative;
     z-index: 1;
+}
+
+/* Centre the bottom row of 2 cards in a 3-col grid */
+.agents-grid .agent-card:nth-child(4) {
+    grid-column: 1 / 2;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.agents-grid .agent-card:nth-child(5) {
+    grid-column: 2 / 3;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 /* Glassmorphism Agent Card */
@@ -1901,6 +1922,13 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Reset nth-child centering for 2-col tablet layout */
+    .agents-grid .agent-card:nth-child(4),
+    .agents-grid .agent-card:nth-child(5) {
+        grid-column: auto;
+        margin: 0;
+    }
+
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1996,6 +2024,13 @@ ul {
 
     .agents-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Reset nth-child centering for single-col mobile layout */
+    .agents-grid .agent-card:nth-child(4),
+    .agents-grid .agent-card:nth-child(5) {
+        grid-column: auto;
+        margin: 0;
     }
 
     .timeline-container::before {
