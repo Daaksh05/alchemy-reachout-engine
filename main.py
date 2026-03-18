@@ -27,3 +27,11 @@ async def get_js():
 @app.get("/logo.png")
 async def get_logo():
     return FileResponse('logo.png')
+
+@app.get("/sanjay.png")
+async def get_sanjay():
+    return FileResponse('sanjay.png')
+
+@app.get("/daakshayani.png")
+async def get_daakshayani():
+    return FileResponse('daakshayani.png')
