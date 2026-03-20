@@ -63,12 +63,11 @@ We utilize 3 fully developed agents to provide comprehensive growth services:
 
 ---
 
-## 👥 The Founders
+## 👥 The Founder
 
-- **Sanjaykumaran** - CEO & Co-Founder
-- **Daakshayani** - CTO & Co-Founder
+- **Daakshayani** - Founder & CEO
 
-*We personally oversee every campaign to ensure Alchemy's AI stack performs at its peak for your business.*
+*I personally oversee every campaign to ensure Alchemy's AI stack performs at its peak for your business.*
 
 ---
 

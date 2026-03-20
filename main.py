@@ -32,6 +32,10 @@ async def get_logo():
 async def get_sanjay():
     return FileResponse('sanjay.png')
 
-@app.get("/daakshayani.jpg")
+@app.get("/daakshayani.png")
 async def get_daakshayani():
-    return FileResponse('daakshayani.jpg')
+    return FileResponse('daakshayani.png')
+
+@app.get("/assistant")
+async def get_assistant():
+    return FileResponse('assistant.html')
