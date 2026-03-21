@@ -123,12 +123,34 @@
             color: var(--primary-blue);
         }
 
-        .nav-cta {
-            background: var(--primary-blue);
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600 !important;
+        .nav-links.active {
+            display: flex;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background: white;
+            flex-direction: column;
+            padding: 40px;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            z-index: 999;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--dark-blue);
+            transition: var(--transition);
         }
 
         /* Hero Section */
@@ -139,7 +161,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(40px, 8vw, 72px);
+            font-size: clamp(32px, 8vw, 72px);
             line-height: 1.1;
             margin-bottom: 24px;
             color: var(--dark-blue);
@@ -241,7 +263,7 @@
 
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
         }
 
@@ -600,13 +622,38 @@
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero h1 { font-size: 40px; }
+            .nav-toggle { display: flex; }
+            .hero h1 { font-size: 32px; padding: 0 10px; }
+            .hero p { font-size: 18px; }
+            .hero-btns {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 12px;
+            }
+            .btn { width: 100%; box-sizing: border-box; }
             .stats-grid, .pricing-grid, .client-grid, .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
-            .demo-section { grid-template-columns: 1fr; }
+            .demo-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 0; }
             .price-card.featured { transform: scale(1); }
-            .cta-banner h2 { font-size: 32px; }
+            .cta-banner { padding: 40px 20px; margin: 40px 24px; }
+            .cta-banner h2 { font-size: 28px; }
+            .section-title { font-size: 28px; margin-bottom: 32px; }
+            .card { padding: 24px; }
+            .demo-content .demo-title { font-size: 28px !important; text-align: center; margin-bottom: 24px; color: var(--dark-blue); }
+            .demo-content li { font-size: 16px; margin-bottom: 16px; }
+            .phone-mockup { width: 260px; height: 520px; }
+            .nav-cta { width: auto; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 28px; }
+            .stat-card { padding: 20px; }
+            .stat-number { font-size: 24px; }
+            .price-val { font-size: 30px; }
+            .section-padding { padding: 40px 0; }
+            .container { padding: 0 16px; }
         }
     </style>
 </head>
@@ -618,14 +665,18 @@
                 <img src="logo.png" alt="Alchemy AI Logo" style="height: 44px; width: auto;">
                 <span>Alchemy AI</span>
             </a>
-            <div class="nav-links">
-                <a href="#agents">Agents</a>
+            <div class="nav-links" id="navLinks">
                 <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
                 <a href="#pricing">Pricing</a>
-                <a href="#team">Team</a>
-                <a href="#assistant" style="color: var(--primary-blue); font-weight: 700;">Assistant</a>
+                <a href="/assistant" style="color: var(--primary-blue); font-weight: 700;">Assistant</a>
                 <a href="mailto:alchemyai71@gmail.com" class="nav-cta">Get Started</a>
             </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -726,7 +777,7 @@
                 </div>
             </div>
             <div class="demo-content">
-                <h2 style="font-size: 40px; margin-bottom: 32px; color: var(--dark-blue);">The only dashboard you need is WhatsApp</h2>
+                <h2 class="demo-title">The only dashboard you need is WhatsApp</h2>
                 <ul>
                     <li>Results delivered to you — no logging in</li>
                     <li>Your five AI agents working in the background</li>
@@ -955,6 +1006,23 @@
 
         const statsSection = document.querySelector('.stats-grid');
         if (statsSection) observer.observe(statsSection);
+
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (navToggle) {
+            navToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
 
         // Sticky Nav effect
         window.addEventListener('scroll', () => {
