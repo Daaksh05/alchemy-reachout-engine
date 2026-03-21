@@ -9,11 +9,10 @@
     <meta name="keywords" content="AI, sales automation, lead generation, AI agents, marketing automation">
     <title>Alchemy AI - Turn Prospects Into Customers</title>
 
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts - DM Sans & Syne (New Design System) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..500;1,9..40,300..500&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css?v=3.0">
@@ -137,9 +136,10 @@
                 <li><a href="#agents" class="nav-link">Agents</a></li>
                 <li><a href="#features" class="nav-link">Features</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#service-recommender" class="nav-link">Service Finder</a></li>
                 <li><a href="#team" class="nav-link">Team</a></li>
-                <li><a href="/assistant" class="nav-link">Assistant</a></li>
-                <li><a href="#transformation-cta" class="nav-link nav-cta">Get Started</a></li>
+                <li><a href="/assistant" class="nav-link" style="color: #3D52A0; font-weight: 700;">Assistant</a></li>
+                <li><a href="#service-recommender" class="nav-link nav-cta">Get Started</a></li>
             </ul>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -187,7 +187,7 @@
 
                 <!-- CTA Buttons -->
                 <div class="hero-ctas">
-                    <a href="#pricing" class="btn btn-primary btn-lg">
+                    <a href="#service-recommender" class="btn btn-primary btn-lg">
                         Get Started Free
                     </a>
 
@@ -1074,6 +1074,546 @@
 
             </div>
         </div>
+    </section>
+
+    <!-- ========== SERVICE RECOMMENDER SECTION ========== -->
+    <section id="service-recommender" class="section-padding" style="position: relative; background: #FFFFFF; overflow: hidden; padding: 120px 0; border-top: 1.5px solid #DDE6F5;">
+        <style>
+            #service-recommender {
+                --primary-blue: #3D52A0;
+                --dark-blue: #1B3A8C;
+                --accent-blue: #89C4F4;
+                --border-color: #DDE6F5;
+                --text-primary: #0B0E1A;
+                --text-muted: #6B7280;
+                --bg-light: #EEF2FF;
+                font-family: 'DM Sans', sans-serif;
+            }
+            #service-recommender h1, 
+            #service-recommender h2, 
+            #service-recommender h3,
+            #service-recommender .badge {
+                font-family: 'Syne', sans-serif;
+            }
+            #service-recommender .mesh-gradient {
+                position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;
+                background-color: #ffffff;
+                background-image: 
+                    radial-gradient(at 0% 0%, hsla(225, 39%, 95%, 1) 0, transparent 50%), 
+                    radial-gradient(at 50% 0%, hsla(225, 39%, 90%, 1) 0, transparent 50%), 
+                    radial-gradient(at 100% 0%, hsla(205, 87%, 92%, 1) 0, transparent 50%);
+                opacity: 0.8;
+            }
+            #service-recommender .container { position: relative; z-index: 1; }
+            
+            /* UI Elements */
+            .recommender-card {
+                background: white;
+                border: 1.5px solid var(--border-color);
+                border-radius: 16px;
+                padding: 24px;
+                cursor: pointer;
+                transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 12px;
+            }
+            .recommender-card:hover { transform: translateY(-4px); border-color: var(--primary-blue); }
+            .recommender-card.selected { border-color: var(--primary-blue); background-color: var(--bg-light); }
+            .recommender-card .icon { font-size: 32px; }
+            .recommender-card h4 { font-size: 18px; margin: 0; color: var(--text-primary); }
+            .recommender-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+            /* Grids */
+            .step-grid-8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+            .step-grid-6 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+            .step-grid-4 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+            /* Buttons */
+            .btn-next, .btn-submit {
+                background: var(--primary-blue);
+                color: white;
+                border: none;
+                padding: 16px 32px;
+                border-radius: 12px;
+                font-weight: 700;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.2s ease;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+            .btn-next:hover, .btn-submit:hover { background: var(--dark-blue); }
+            .btn-next:disabled { background: #D1D5DB; cursor: not-allowed; }
+            .btn-back {
+                background: transparent;
+                color: var(--text-muted);
+                border: 1.5px solid var(--border-color);
+                padding: 16px 32px;
+                border-radius: 12px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.2s ease;
+            }
+            .btn-back:hover { background: #F8FAFF; }
+
+            /* Step Transitions */
+            .step-content { display: none; opacity: 0; transform: translateX(20px); transition: all 0.4s ease; }
+            .step-content.active { display: block; opacity: 1; transform: translateX(0); }
+
+            /* Step Indicators */
+            .steps-indicator { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; }
+            .step-label { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #D1D5DB; }
+            .step-label.active { color: var(--primary-blue); }
+            .step-label.done { color: #10B981; }
+            .dot { width: 10px; height: 10px; border-radius: 50%; background: currentColor; }
+
+            /* Layout Step 4 */
+            .rec-layout { display: grid; grid-template-columns: 6fr 4fr; gap: 40px; }
+            .rec-result-card { border: 2.5px solid var(--primary-blue); background: #FBFCFF; padding: 40px; border-radius: 20px; }
+            .form-card { background: white; border: 1.5px solid var(--border-color); padding: 40px; border-radius: 20px; }
+            .form-group { margin-bottom: 20px; }
+            .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 14px; }
+            .form-group input, .form-group textarea {
+                width: 100%; padding: 12px 16px; border: 1.5px solid var(--border-color); border-radius: 8px;
+                font-family: inherit; font-size: 15px; outline: none; transition: border-color 0.2s;
+            }
+            .form-group input:focus, .form-group textarea:focus { border-color: var(--primary-blue); }
+            .form-group input.error { border-color: #EF4444; }
+
+            /* Mobile */
+            @media (max-width: 768px) {
+                .step-grid-8 { grid-template-columns: 1fr 1fr; }
+                .step-grid-6 { grid-template-columns: 1fr 1fr; }
+                .step-grid-4 { grid-template-columns: 1fr 1fr; }
+                .rec-layout { grid-template-columns: 1fr; }
+                .steps-indicator { gap: 15px; font-size: 12px; }
+                .step-label span { display: none; }
+            }
+        </style>
+
+        <div class="mesh-gradient"></div>
+        <div class="container">
+            <!-- Header -->
+            <div style="text-align: center; margin-bottom: 60px;">
+                <span class="badge" style="background: rgba(61, 82, 160, 0.1); color: #3D52A0; padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px;">Service Recommender</span>
+                <h2 style="font-size: clamp(32px, 5vw, 48px); color: #1B3A8C; margin-top: 20px; line-height: 1.2;">Not sure which service is right for you?</h2>
+                <p style="color: #6B7280; font-size: 18px; max-width: 600px; margin: 15px auto;">Answer 3 quick questions and we will tell you exactly what your business needs — and what it will cost.</p>
+            </div>
+
+            <!-- Progress Bar -->
+            <div style="max-width: 800px; margin: 0 auto 60px;">
+                <div class="steps-indicator" style="display: flex; justify-content: center; align-items: center; gap: 20px; font-weight: 700; color: #D1D5DB;">
+                    <div class="step-label active" id="indicator-1">Step 1</div>
+                    <div class="arrow">→</div>
+                    <div class="step-label" id="indicator-2">Step 2</div>
+                    <div class="arrow">→</div>
+                    <div class="step-label" id="indicator-3">Step 3</div>
+                    <div class="arrow">→</div>
+                    <div class="step-label" id="indicator-4">Step 4</div>
+                </div>
+                <div style="height: 6px; background: #EEF2FF; border-radius: 3px; position: relative;">
+                    <div id="progress-bar" style="position: absolute; left: 0; top: 0; height: 100%; width: 25%; background: var(--primary-blue); border-radius: 3px; transition: width 0.4s ease;"></div>
+                </div>
+            </div>
+
+            <div id="recommender-steps">
+                <!-- STEP 1 -->
+                <div class="step-content active" id="step-1">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h3 style="font-size: 32px; color: #1B3A8C;">What type of business are you?</h3>
+                        <p style="color: #6B7280;">We'll recommend the right service based on your needs</p>
+                    </div>
+                    <div class="step-grid-8" id="business-grid">
+                        <div class="recommender-card" data-val="Local Business">
+                            <span class="icon">🏪</span>
+                            <h4>Local Business</h4>
+                            <p>Restaurant, gym, clinic, salon, retail shop</p>
+                        </div>
+                        <div class="recommender-card" data-val="B2B Company">
+                            <span class="icon">🏢</span>
+                            <h4>B2B Company</h4>
+                            <p>Agency, consultancy, IT firm, manufacturer</p>
+                        </div>
+                        <div class="recommender-card" data-val="E-Commerce">
+                            <span class="icon">🛒</span>
+                            <h4>E-Commerce</h4>
+                            <p>Online store, fashion, food, lifestyle brand</p>
+                        </div>
+                        <div class="recommender-card" data-val="Real Estate">
+                            <span class="icon">🏘️</span>
+                            <h4>Real Estate</h4>
+                            <p>Agent, developer, property management</p>
+                        </div>
+                        <div class="recommender-card" data-val="Startup">
+                            <span class="icon">💼</span>
+                            <h4>Startup</h4>
+                            <p>Early stage, pre-revenue or growing fast</p>
+                        </div>
+                        <div class="recommender-card" data-val="Coach / Consultant">
+                            <span class="icon">🎓</span>
+                            <h4>Coach / Consultant</h4>
+                            <p>Personal brand, training, advisory</p>
+                        </div>
+                        <div class="recommender-card" data-val="Hospitality">
+                            <span class="icon">🏨</span>
+                            <h4>Hospitality</h4>
+                            <p>Hotel, resort, travel, events</p>
+                        </div>
+                        <div class="recommender-card" data-val="Manufacturing">
+                            <span class="icon">🏭</span>
+                            <h4>Manufacturing</h4>
+                            <p>Factory, export, B2B product company</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2 -->
+                <div class="step-content" id="step-2">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h3 style="font-size: 32px; color: #1B3A8C;">What is your biggest growth challenge?</h3>
+                        <p style="color: #6B7280;">Select all that apply</p>
+                    </div>
+                    <div class="step-grid-6" id="challenge-grid">
+                        <div class="recommender-card" data-val="Finding Qualified Leads">
+                            <span class="icon">🎯</span>
+                            <h4>Finding Qualified Leads</h4>
+                            <p>I don't have a reliable way to find new prospects</p>
+                        </div>
+                        <div class="recommender-card" data-val="Creating Content Consistently">
+                            <span class="icon">✍️</span>
+                            <h4>Creating Content Consistently</h4>
+                            <p>I know I need content but never have time to make it</p>
+                        </div>
+                        <div class="recommender-card" data-val="Ranking on Google">
+                            <span class="icon">📈</span>
+                            <h4>Ranking on Google</h4>
+                            <p>My competitors show up on Google but I don't</p>
+                        </div>
+                        <div class="recommender-card" data-val="Managing Reviews">
+                            <span class="icon">⭐</span>
+                            <h4>Managing Reviews</h4>
+                            <p>I have negative reviews and don't know how to respond</p>
+                        </div>
+                        <div class="recommender-card" data-val="Running Ads">
+                            <span class="icon">📢</span>
+                            <h4>Running Ads</h4>
+                            <p>I need Google and Meta ads but don't know where to start</p>
+                        </div>
+                        <div class="recommender-card" data-val="WhatsApp AI Assistant">
+                            <span class="icon">💬</span>
+                            <h4>WhatsApp Assistant</h4>
+                            <p>I want an AI assistant that handles tasks on WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 3 -->
+                <div class="step-content" id="step-3">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h3 style="font-size: 32px; color: #1B3A8C;">What is your monthly budget?</h3>
+                        <p style="color: #6B7280;">This helps us recommend the right plan</p>
+                    </div>
+                    <div class="step-grid-4" id="budget-grid" style="max-width: 800px; margin: 0 auto;">
+                        <div class="recommender-card" data-val="Under Rs.10,000">
+                            <span class="icon">🌱</span>
+                            <h4>Under Rs.10,000/mo</h4>
+                            <p>Just getting started</p>
+                        </div>
+                        <div class="recommender-card" data-val="Rs.10,000 — 30,000">
+                            <span class="icon">🚀</span>
+                            <h4>Rs.10k — 30k/mo</h4>
+                            <p>Ready to invest in growth</p>
+                        </div>
+                        <div class="recommender-card" data-val="Rs.30,000 — 75,000">
+                            <span class="icon">🔥</span>
+                            <h4>Rs.30k — 75k/mo</h4>
+                            <p>Serious about scaling</p>
+                        </div>
+                        <div class="recommender-card" data-val="Rs.75,000+">
+                            <span class="icon">🏢</span>
+                            <h4>Rs.75,000+/mo</h4>
+                            <p>Enterprise — full service</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 4 -->
+                <div class="step-content" id="step-4">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h3 style="font-size: 32px; color: #1B3A8C;">Here is what we recommend for you</h3>
+                    </div>
+                    <div class="rec-layout">
+                        <!-- Recommendation Card -->
+                        <div id="recommendation-result">
+                            <!-- Logic populated here -->
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="form-card">
+                            <form id="recommendation-form">
+                                <div class="form-group">
+                                    <label>Full Name *</label>
+                                    <input type="text" id="form-name" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Business Name *</label>
+                                    <input type="text" id="form-business" placeholder="Alchemy Inc." required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email Address *</label>
+                                    <input type="email" id="form-email" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>WhatsApp Number *</label>
+                                    <input type="tel" id="form-whatsapp" placeholder="+91 98765 43210" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>City *</label>
+                                    <input type="text" id="form-city" placeholder="Chennai" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Anything else (Optional)</label>
+                                    <textarea id="form-message" rows="3" placeholder="Tell us more..."></textarea>
+                                </div>
+                                <button type="submit" class="btn-submit" style="width: 100%; justify-content: center;">
+                                    Get My Custom Proposal →
+                                </button>
+                            </form>
+                            <div id="form-success" style="display: none; text-align: center; padding: 20px;">
+                                <div style="font-size: 48px; margin-bottom: 20px;">✅</div>
+                                <h4 style="font-size: 24px; color: #1B3A8C; margin-bottom: 16px;">Thank you <span id="success-name"></span>!</h4>
+                                <p style="color: #6B7280; margin-bottom: 24px;">We have received your details. Our team will reach out on WhatsApp within 4 hours with a custom proposal for <span id="success-business" style="font-weight: 700;"></span>.</p>
+                                <p style="font-size: 14px; color: #6B7280;">In the meantime follow us on LinkedIn:<br>
+                                <a href="https://linkedin.com/company/alchemyai-in" target="_blank" style="color: #3D52A0; font-weight: 700; text-decoration: underline;">linkedin.com/company/alchemyai-in</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nav Buttons -->
+            <div id="recommender-nav" style="display: flex; justify-content: space-between; max-width: 800px; margin: 40px auto 0;">
+                <button class="btn-back" id="btn-back" style="visibility: hidden;">← Back</button>
+                <button class="btn-next" id="btn-next" disabled>Next Step →</button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Fix for Get Started buttons if they fail to scroll
+                document.querySelectorAll('a[href="#service-recommender"]').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const target = document.getElementById('service-recommender');
+                        if (target) {
+                            e.preventDefault();
+                            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+                            window.scrollTo({ top, behavior: 'smooth' });
+                            // Close mobile menu if open
+                            const navMenu = document.getElementById('navMenu');
+                            const navToggle = document.getElementById('navToggle');
+                            if (navMenu) navMenu.classList.remove('active');
+                            if (navToggle) navToggle.classList.remove('active');
+                        }
+                    });
+                });
+
+                const stepsValues = {
+                    business: '',
+                    challenges: [],
+                    budget: ''
+                };
+                let currentStepNum = 1;
+
+                const nextBtn = document.getElementById('btn-next');
+                const backBtn = document.getElementById('btn-back');
+                const progressBar = document.getElementById('progress-bar');
+                const stepContents = document.querySelectorAll('.step-content');
+                const indicators = document.querySelectorAll('.step-label');
+
+                // Step 1 Selection
+                document.querySelectorAll('#business-grid .recommender-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        document.querySelectorAll('#business-grid .recommender-card').forEach(c => c.classList.remove('selected'));
+                        card.classList.add('selected');
+                        stepsValues.business = card.dataset.val;
+                        validateStep();
+                    });
+                });
+
+                // Step 2 Selection (Multi)
+                document.querySelectorAll('#challenge-grid .recommender-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const val = card.dataset.val;
+                        const idx = stepsValues.challenges.indexOf(val);
+                        if (idx > -1) {
+                            stepsValues.challenges.splice(idx, 1);
+                            card.classList.remove('selected');
+                        } else {
+                            stepsValues.challenges.push(val);
+                            card.classList.add('selected');
+                        }
+                        validateStep();
+                    });
+                });
+
+                // Step 3 Selection
+                document.querySelectorAll('#budget-grid .recommender-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        document.querySelectorAll('#budget-grid .recommender-card').forEach(c => c.classList.remove('selected'));
+                        card.classList.add('selected');
+                        stepsValues.budget = card.dataset.val;
+                        validateStep();
+                    });
+                });
+
+                function validateStep() {
+                    let isValid = false;
+                    if (currentStepNum === 1) isValid = !!stepsValues.business;
+                    else if (currentStepNum === 2) isValid = stepsValues.challenges.length > 0;
+                    else if (currentStepNum === 3) isValid = !!stepsValues.budget;
+                    
+                    nextBtn.disabled = !isValid;
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    if (currentStepNum < 4) {
+                        goToStep(currentStepNum + 1);
+                    }
+                });
+
+                backBtn.addEventListener('click', () => {
+                    if (currentStepNum > 1) {
+                        goToStep(currentStepNum - 1);
+                    }
+                });
+
+                function goToStep(s) {
+                    // Update content
+                    stepContents.forEach(c => c.classList.remove('active'));
+                    document.getElementById('step-' + s).classList.add('active');
+                    
+                    currentStepNum = s;
+                    
+                    // Update UI
+                    backBtn.style.visibility = currentStepNum === 1 ? 'hidden' : 'visible';
+                    if (currentStepNum === 4) {
+                        document.getElementById('recommender-nav').style.display = 'none';
+                        generateRecommendation();
+                    }
+                    
+                    progressBar.style.width = (currentStepNum * 25) + '%';
+                    
+                    indicators.forEach((ind, i) => {
+                        ind.classList.remove('active', 'done');
+                        if (i + 1 < currentStepNum) ind.classList.add('done');
+                        else if (i + 1 === currentStepNum) ind.classList.add('active');
+                    });
+                    
+                    validateStep();
+
+                    // Scroll to top of section
+                    document.getElementById('service-recommender').scrollIntoView({ behavior: 'smooth' });
+                }
+
+                function generateRecommendation() {
+                    const res = document.getElementById('recommendation-result');
+                    let title = "The Growth Bundle";
+                    let emoji = "📦";
+                    let desc = `Based on your multiple growth needs, our Growth Bundle gives you all 5 agents fully managed for one monthly retainer. Most popular with ${stepsValues.business} businesses.`;
+                    let bullets = ["All 5 AI Agents", "Dedicated Account Manager", "Priority Support"];
+                    let price = "Custom Pricing";
+                    let delivery = "48 Hours";
+
+                    if (stepsValues.challenges.length === 1) {
+                        const chal = stepsValues.challenges[0];
+                        if (chal === "Finding Qualified Leads") {
+                            title = "Lead Intelligence Agent"; emoji = "🎯";
+                            desc = `Based on your ${stepsValues.business}, we recommend starting with our Lead Intelligence Agent. We source and score prospects that match your ideal customer profile and deliver a ranked list every week.`;
+                            bullets = ["Scored Prospect Lists", "ICP Identification", "Weekly Delivery"];
+                            price = "From ₹6,500/mo";
+                        } else if (chal === "Creating Content Consistently") {
+                            title = "Content Repurposing Agent"; emoji = "✍️";
+                            desc = "You give us one brief. We deliver 50+ content variations across every platform — LinkedIn, Instagram, email, Google Ads — every week.";
+                            bullets = ["50+ Platform Variations", "One Brief to Many", "High Quality Edits"];
+                            price = "From ₹8,500/mo";
+                        } else if (chal === "Ranking on Google") {
+                            title = "SEO Growth Engine"; emoji = "📈";
+                            desc = "We write and publish SEO articles and city-specific landing pages directly to your website. No copy-paste, no back and forth — just results.";
+                            bullets = ["Automated City Pages", "SEO Optimized Articles", "Direct Site Publishing"];
+                            price = "From ₹12,000/mo";
+                        } else if (chal === "Managing Reviews") {
+                            title = "Reputation Intelligence Agent"; emoji = "⭐";
+                            desc = "We monitor your reviews, write professional responses, and send you a weekly brand health report so you always know what customers are saying.";
+                            bullets = ["Review Monitoring", "AI Response Drafts", "Weekly Health Report"];
+                            price = "From ₹6,500/mo";
+                        } else if (chal === "Running Ads") {
+                            title = "SEO Growth Engine — Ad Copy Module"; emoji = "📢";
+                            desc = "We generate Google Search, Meta Facebook, Instagram, and WhatsApp ad copy — formatted and ready to upload. No agency fees.";
+                            bullets = ["Multi-Platform Ad Copy", "Formatted for Upload", "Ad Asset Generation"];
+                            price = "From ₹7,500/mo";
+                        } else if (chal === "WhatsApp AI Assistant") {
+                            title = "Alchemy Assistant"; emoji = "💬";
+                            desc = "Your AI employee on WhatsApp — powered by OpenClaw open source technology, managed by our team. Handles leads, emails, reports and calendar.";
+                            bullets = ["WhatsApp Native", "Works with your CRM", "Setup in 48h"];
+                            price = "From ₹799/mo";
+                        }
+                    }
+
+                    res.innerHTML = `
+                        <div class="rec-result-card">
+                            <div style="font-size: 64px; margin-bottom: 20px;">${emoji}</div>
+                            <h3 style="font-size: 32px; color: #1B3A8C; margin-bottom: 20px;">${title}</h3>
+                            <p style="color: #6B7280; font-size: 18px; margin-bottom: 30px; line-height: 1.6;">${desc}</p>
+                            <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                                ${bullets.map(b => `<li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #0B0E1A; font-weight: 500;"><span style="color: #10B981;">✓</span> ${b}</li>`).join('')}
+                            </ul>
+                            <div style="display: flex; justify-content: space-between; padding-top: 30px; border-top: 1.5px solid #DDE6F5;">
+                                <div>
+                                    <span style="font-size: 13px; color: #6B7280; text-transform: uppercase; font-weight: 700;">Est. Delivery</span>
+                                    <div style="font-size: 18px; font-weight: 700; color: #1B3A8C;">${delivery}</div>
+                                </div>
+                                <div style="text-align: right;">
+                                    <span style="font-size: 13px; color: #6B7280; text-transform: uppercase; font-weight: 700;">Starting Price</span>
+                                    <div style="font-size: 18px; font-weight: 700; color: #3D52A0;">${price}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Form Submit
+                const recForm = document.getElementById('recommendation-form');
+                recForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('form-name').value;
+                    const business = document.getElementById('form-business').value;
+                    const email = document.getElementById('form-email').value;
+                    const whatsapp = document.getElementById('form-whatsapp').value;
+                    const city = document.getElementById('form-city').value;
+                    const message = document.getElementById('form-message').value;
+
+                    // mailto logic
+                    const subject = `New Service Enquiry — ${business}`;
+                    const body = `Name: ${name}\nBusiness: ${business}\nEmail: ${email}\nWhatsApp: ${whatsapp}\nCity: ${city}\n\nClient Profile:\n- Business Type: ${stepsValues.business}\n- Challenges: ${stepsValues.challenges.join(', ')}\n- Budget: ${stepsValues.budget}\n\nNotes:\n${message}`;
+                    
+                    const mailtoLink = `mailto:alchemyai71@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    
+                    // Show success
+                    recForm.style.display = 'none';
+                    document.getElementById('form-success').style.display = 'block';
+                    document.getElementById('success-name').innerText = name;
+                    document.getElementById('success-business').innerText = business;
+
+                    // Open mailto
+                    window.location.href = mailtoLink;
+                });
+            });
+        </script>
     </section>
 
     <!-- ========== MASSIVE TRANSFORMATION SECTION ========== -->
