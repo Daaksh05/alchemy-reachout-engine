@@ -1186,12 +1186,18 @@
 
             /* Mobile */
             @media (max-width: 768px) {
-                .step-grid-8 { grid-template-columns: 1fr 1fr; }
-                .step-grid-6 { grid-template-columns: 1fr 1fr; }
-                .step-grid-4 { grid-template-columns: 1fr 1fr; }
+                .step-grid-8, .step-grid-6, .step-grid-4 { grid-template-columns: 1fr 1fr; gap: 12px; }
                 .rec-layout { grid-template-columns: 1fr; }
                 .steps-indicator { gap: 15px; font-size: 12px; }
                 .step-label span { display: none; }
+                .recommender-card { padding: 20px 16px; }
+            }
+
+            @media (max-width: 500px) {
+                .step-grid-8, .step-grid-6, .step-grid-4 { grid-template-columns: 1fr; }
+                .section-title { font-size: 28px !important; }
+                .recommender-card { padding: 24px; }
+                .recommender-card .icon { font-size: 40px; }
             }
         </style>
 
